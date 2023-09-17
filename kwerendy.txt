@@ -1,0 +1,4 @@
+Kwerenda 1: SELECT nazwa,cena FROM uslugi;
+Kwerenda 2: SELECT imie,rodzaj,nastepna_wizyta,telefon from zwierzeta WHERE nastepna_wizyta!=0;
+Kwerenda 3: SELECT rodzaj,nazwa from zwierzeta INNER JOIN uslugi on uslugi.id=zwierzeta.usluga_id;
+Kwerenda 4: SELECT MIN(cena) AS minimalna_cena FROM Uslugi;
