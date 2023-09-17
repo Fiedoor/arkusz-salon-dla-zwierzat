@@ -24,13 +24,30 @@
         <div id="mid">
             <h3>PRZYPOMNIENIE O NASTĘPNEJ WIZYCIE</h3>
             <?php
-            //skrypt 1
+            $conn = mysqli_connect('localhost', 'root', '', 'salon');
+            $q2 = "SELECT imie,rodzaj,nastepna_wizyta,telefon from zwierzeta WHERE nastepna_wizyta!=0;";
+            $result = mysqli_query($conn, $q2);
+            foreach ($result as $r) {
+                if ($r['rodzaj'] == 1) {
+                    echo "Pies " . $r['imie'] . "<br>";
+                } else {
+                    echo "Kot" . $r['imie'] . "<br>";
+                }
+                echo "Data następnej wizyty: " . $r['nastepna_wizyta'] . ", telefon właściciela: " . $r['telefon'] . "<br>";
+            }
             ?>
         </div>
         <div class="side">
             <h3>USŁUGI</h3>
             <?php
-            //skrypt 2
+            $q1 = "SELECT nazwa,cena FROM uslugi;";
+            $result2 = mysqli_query($conn, $q1);
+            foreach ($result2 as $res) {
+                foreach ($res as $r) {
+                    echo $r . " ";
+                }
+                echo "<br>";
+            }
             ?>
         </div>
     </main>
