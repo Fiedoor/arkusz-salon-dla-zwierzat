@@ -31,7 +31,7 @@
                 if ($r['rodzaj'] == 1) {
                     echo "Pies " . $r['imie'] . "<br>";
                 } else {
-                    echo "Kot" . $r['imie'] . "<br>";
+                    echo "Kot " . $r['imie'] . "<br>";
                 }
                 echo "Data następnej wizyty: " . $r['nastepna_wizyta'] . ", telefon właściciela: " . $r['telefon'] . "<br>";
             }
